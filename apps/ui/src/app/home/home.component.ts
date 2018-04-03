@@ -15,7 +15,7 @@ export class HomeComponent {
   fuse;
   fuzzyMatches: Array<string> = [];
 
-  static sortByQuantity(a, b) {
+  private static sortByQuantity(a, b) {
     if (a.quantity < b.quantity)
       return 1;
     if (a.quantity > b.quantity)
@@ -60,7 +60,18 @@ export class HomeComponent {
     this.charactersSorted.sort(HomeComponent.sortByQuantity)
   }
 
-  showFuzzyMatches(matchVal) {
+  showFuzzyMatches(matchVal: string) {
+    if (this.people.length === 0) {
+      console.log('Please fetch people before attempting fuzzy match');
+
+      return;
+    }
+    if (matchVal.length === 0) {
+      console.log('Please enter a value to match before attempting fuzzy match');
+
+      return;
+    }
+
     this.fuzzyMatches = [];
     const possibleMatches = this.fuse.search(matchVal);
     for (const match of possibleMatches) {

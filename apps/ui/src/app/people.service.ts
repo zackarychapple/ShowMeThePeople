@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable()
 export class PeopleService {
-  headers: HttpHeaders = new HttpHeaders({'Authorization': PUT_TOKEN_HERE);
+  headers: HttpHeaders = new HttpHeaders({'Authorization': 'Bearer ${TOKEN}'});
 
   constructor(private http: HttpClient) {
   }
