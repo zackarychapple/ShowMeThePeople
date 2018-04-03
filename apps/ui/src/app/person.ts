@@ -1,0 +1,59 @@
+export interface Person {
+  "id": number;
+  "created_at": Date;
+  "updated_at": Date;
+  "last_contacted_at": Date;
+  "last_replied_at": Date;
+  "first_name": string;
+  "last_name": string;
+  "display_name": string;
+  "email_address": string;
+  "secondary_email_address": any;
+  "personal_email_address": any;
+  "phone": any;
+  "phone_extension": any;
+  "home_phone": any;
+  "mobile_phone": any;
+  "linkedin_url": any;
+  "title": any;
+  "city": any;
+  "state": any;
+  "country": any;
+  "work_city": any;
+  "work_state": any;
+  "work_country": any;
+  "crm_url": any;
+  "crm_id": any;
+  "crm_object_type": any;
+  "owner_crm_id": any;
+  "person_company_name": any;
+  "person_company_website": string;
+  "person_company_industry": any;
+  "do_not_contact": Boolean;
+  "bouncing": Boolean;
+  "locale": any;
+  "personal_website": any;
+  "twitter_handle": any;
+  "last_contacted_type": any;
+  "custom_fields": any
+  "tags": Array<any>;
+  "counts": {
+    "emails_sent": number;
+    "emails_viewed": number;
+    "emails_clicked": number;
+    "emails_replied_to": number;
+    "emails_bounced": number;
+    "calls": number;
+  },
+  "account": any;
+  "owner": {
+    "_href": string;
+    "id": number;
+  },
+  "last_contacted_by": null;
+  "import": null;
+  "person_stage": {
+    "_href": string;
+    "id": number;
+  }
+}

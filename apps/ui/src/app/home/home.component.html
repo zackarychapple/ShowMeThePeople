@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-primary" (click)="getData()">Fetch</button>
+      <button type="button" class="btn btn-secondary" (click)="checkCount()">Check Character Count</button>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <input class="form-control" placeholder="Fuzzy Match Value" #matchVal>
+        <button type="button" class="btn btn-dark" (click)="showFuzzyMatches(matchVal.value)">Check Fuzzy Matches
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-4">Emails</div>
+      </div>
+      <div class="row" *ngFor="let person of people"
+           [ngClass]="{'matched':fuzzyMatches.indexOf(person.email_address)> -1}">
+        <div class="col-md-4">Name: {{person.display_name}}</div>
+        <div class="col-md-4">Email: {{person.email_address}}</div>
+        <div class="col-md-4">Title: {{person.title || 'None Provided'}}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-4">Character Counts</div>
+      </div>
+      <table class="table">
+        <tr *ngFor="let character of charactersSorted">
+          <td>{{character.character}}</td>
+          <td>{{character.quantity}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
